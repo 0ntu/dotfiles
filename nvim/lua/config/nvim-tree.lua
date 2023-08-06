@@ -33,7 +33,7 @@ require("nvim-tree").setup({
     enable = true,
     update_root = false,
   },
-  on_attach = on_attach
+  on_attach = on_attach,
   ---
 })
 

@@ -43,11 +43,6 @@ local servers = {
   clangd = {
     filetypes = { "cpp", "h", "hpp" }
   },
-  -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
-  -- tsserver = {},
-
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
@@ -123,4 +118,9 @@ cmp.setup {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
   },
+}
+
+-- zig "support"
+require'lspconfig'.zls.setup{
+  cmd = {"/usr/bin/zls"},
 }

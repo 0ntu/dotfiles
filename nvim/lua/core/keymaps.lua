@@ -31,8 +31,8 @@ vim.keymap.set('n', '<C-k>', '<C-w>k', { desc = 'Select up' })
 vim.keymap.set('n', '<C-l>', '<C-w>l', { desc = 'Select right' })
 
 -- Panel Management
-vim.keymap.set('n', '<leader>j', '<Cmd>NvimTreeClose<CR><Cmd>WinShift<CR>', { desc = 'Window Management Mode' })
-vim.keymap.set('n', '<leader>k', '<Cmd>NvimTreeClose<CR><Cmd>WinShift swap<CR>', { desc = 'Swap Windows' })
+vim.keymap.set('n', '<leader>j', '<Cmd>WinShift<CR>', { desc = 'Window Management Mode' })
+vim.keymap.set('n', '<leader>k', '<Cmd>WinShift swap<CR>', { desc = 'Swap Windows' })
 
 -- Panel Resizing
 vim.keymap.set('n', '+', '<C-w>+', { desc = 'Increase Panel Vertical' })
@@ -53,7 +53,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function()
     vim.highlight.on_yank()
   end,
-  group = highlight_group,
   pattern = '*',
 })
 
@@ -82,8 +81,6 @@ vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { de
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sk', require('telescope.builtin').keymaps, { desc = '[S]earch [K]eymaps' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').registers, { desc = '[S]earch [R]egisters' })
-vim.keymap.set('n', '<leader>ss', "<cmd>:Telescope aerial<CR>", { silent = true, desc = '[S]earch [S]ymbols' })
-
 
 -- Diagnostic Keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
@@ -98,6 +95,7 @@ vim.keymap.set('n', '<TAB>', "<cmd> NvimTreeToggle<CR>", { desc = 'Toggle NvimTr
 
 -- Format Code
 vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { desc = 'Autoformat' })
+vim.keymap.set('v', '<leader>f', vim.lsp.buf.format, { desc = 'Range Autoformat' })
 
 -- ToggleTerm
 -- Default Open is located in toggleterm config
@@ -154,3 +152,7 @@ vim.keymap.set('n', '<leader>dd', function()
     vim.diagnostic.hide()
   end
 end, {desc = 'LSP: [d]isplay [d]iagnostics'})
+
+
+-- Debug mode
+vim.keymap.set('n', "<F12>", function() require('dapui').toggle() end, {desc = 'DAP: Toggle Debug Mode' })

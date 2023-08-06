@@ -2,7 +2,7 @@ vim.o.hlsearch = false
 vim.o.cursorline = true
 vim.o.number = true
 vim.o.relativenumber = true
-vim.o.mouse = ''
+vim.o.mouse = 'a'
 vim.o.termguicolors = true
 
 -- spaces > tabs
@@ -31,3 +31,4 @@ vim.o.timeoutlen = 300
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
+vim.o.colorcolumn = 80

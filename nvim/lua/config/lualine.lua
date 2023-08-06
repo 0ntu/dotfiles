@@ -4,5 +4,7 @@ require("lualine").setup({
     theme = 'catppuccin',
     component_separators = '|',
     section_separators = '',
+
+    lualine_b = {'branch', 'diff', 'diagnostics', DIAGINLINE, 'bo:filetype'};
   },
 })
