@@ -1,0 +1,32 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=$ZDOTDIR/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+
+bindkey -e
+bindkey '^[[Z' autosuggest-accept
+
+zstyle :compinstall filename '/home/ontu/.zshrc'
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+
+autoload -Uz compinit
+compinit
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZDOTDIR/zsh-syntax-highlighting/themes/catppuccin_frappe-zsh-syntax-highlighting.zsh
+
+alias pacman='sudo pacman'
+alias lsd='lsd --color=always'
+alias ls='lsd -l --group-directories-first'
+alias lt='lsd --tree'
+alias cat='bat'
+alias lzg='lazygit'
+
+# Autostart tmux
+if [ -x "$(command -v tmux)" ] && [ -n "${DISPLAY}" ] && [ -z "${TMUX}" ]; then
+    exec tmux new-session -A -s ${USER} >/dev/null 2>&1
+fi
+
+eval "$(starship init zsh)"
