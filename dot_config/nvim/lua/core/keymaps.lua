@@ -13,7 +13,11 @@ km.set('n', '<Leader>-', '<Cmd>split<CR>', { desc = 'Horizontal Split' })
 km.set('n', '<Leader>|', '<Cmd>vert split<CR>', { desc = 'Vertical Split' })
 
 -- Telescope
-km.set('n', '<leader>sk', require('telescope.builtin').keymaps, { desc = '[S]earch [K]eymaps' })
+km.set('n', '<leader>sk', require('telescope.builtin').keymaps, { desc = '[S]earch [k]eymaps' })
+km.set('n', '<leader>sb', require('telescope.builtin').buffers, { desc = '[S]earch [b]uffers' })
+km.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [f]iles' })
+km.set('n', '<leader>sF', require('telescope.builtin').git_files, { desc = '[S]earch git [F]iles' })
+km.set('n', '<leader>su', function() require('telescope').extensions.undo.undo() end, { desc = '[S]earch [u]ndo tree' })
 
 -- LSP
 vim.api.nvim_create_autocmd('LspAttach', {

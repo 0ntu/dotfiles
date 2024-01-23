@@ -1,4 +1,7 @@
+--local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 local handlers = {
+
     -- Default Handler
     -- Will be called for each installed server that doesn't have
     -- a dedicated handler.
@@ -14,7 +17,8 @@ local handlers = {
                         callSnippet = "Replace"
                     }
                 }
-            }
+            },
+            capabilities = capabilities
         })
     end
 }
