@@ -13,11 +13,12 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-    -- Managed Plugins
     require('plugins/catppuccin'),
-    require('plugins/luasnip'),
     require('plugins/neodev'),
     require('plugins/lsp'),
+    require('plugins/luasnip'),
+
+    -- Time Independent
     require('plugins/indent-blankline'),
     require('plugins/lualine'),
     require('plugins/autopairs'),

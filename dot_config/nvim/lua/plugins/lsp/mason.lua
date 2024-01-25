@@ -1,12 +1,9 @@
---local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
 local handlers = {
-
     -- Default Handler
     -- Will be called for each installed server that doesn't have
     -- a dedicated handler.
-    function (server_name)
-       require('lspconfig')[server_name].setup({})
+    function(server_name)
+        require('lspconfig')[server_name].setup({})
     end,
 
     ["lua_ls"] = function()
@@ -18,7 +15,7 @@ local handlers = {
                     }
                 }
             },
-            capabilities = capabilities
+            capabilities = Capabilities
         })
     end
 }

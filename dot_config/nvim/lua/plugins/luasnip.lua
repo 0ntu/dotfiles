@@ -1,4 +1,4 @@
 return {
-	"L3MON4D3/LuaSnip",
-	opts = {}
+    "L3MON4D3/LuaSnip",
+    opts = {}
 }

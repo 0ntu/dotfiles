@@ -12,9 +12,10 @@ return {
             extensions = {
                 undo = {}
             },
+            mappings = {
+            }
 
         })
         require('telescope').load_extension('undo')
-
     end
 }
