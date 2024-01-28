@@ -20,6 +20,8 @@ require('lazy').setup({
 
     -- Time Independent
     require('plugins/indent-blankline'),
+    require('plugins/comment'),
+    require('plugins/sleuth'),
     require('plugins/lualine'),
     require('plugins/autopairs'),
     require('plugins/treesitter'),

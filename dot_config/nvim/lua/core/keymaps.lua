@@ -33,13 +33,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
         km.set('n', 'gd', vim.lsp.buf.definition, opts)
         km.set('n', 'K', vim.lsp.buf.hover, opts)
         km.set('n', 'gi', vim.lsp.buf.implementation, opts)
-        km.set('n', '<leader>K', vim.lsp.buf.signature_help, opts)
+        km.set('n', '<leader>k', vim.lsp.buf.signature_help, opts)
         km.set('n', '<leader>D', vim.lsp.buf.type_definition, opts)
         km.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
         km.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
         km.set('n', '<leader>gr', vim.lsp.buf.references, opts)
         km.set('n', '<space>f', function()
-            vim.lsp.buf.format { async = true }
+            vim.lsp.buf.format({ async = true })
         end, opts)
     end,
 })
