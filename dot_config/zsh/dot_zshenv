@@ -1,1 +1,2 @@
 EDITOR=nvim
+PATH=$PATH:~/.local/bin
