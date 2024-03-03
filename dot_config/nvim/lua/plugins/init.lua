@@ -19,6 +19,7 @@ require('lazy').setup({
     require('plugins/luasnip'),
 
     -- Time Independent
+    require('plugins/rustaceanvim'),
     require('plugins/indent-blankline'),
     require('plugins/comment'),
     require('plugins/sleuth'),
@@ -29,4 +30,5 @@ require('lazy').setup({
     require('plugins/whichkey'),
     require('plugins/fidget'),
     require('plugins/harpoon'),
+    require('plugins/presence'),
 }, {})

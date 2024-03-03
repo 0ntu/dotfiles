@@ -17,6 +17,10 @@ local handlers = {
             },
             capabilities = Capabilities
         })
+    end,
+
+    -- Handle with rustaceanvim
+    ["rust_analyzer"] = function()
     end
 }
 
