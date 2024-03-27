@@ -21,7 +21,18 @@ local handlers = {
 
     -- Handle with rustaceanvim
     ["rust_analyzer"] = function()
-    end
+
+    end,
+
+    ["pyright"] = function()
+        require('lspconfig').pyright.setup({
+            settings = {
+                pyright = {
+                    typeCheckingMode = 'off'
+                }
+            }
+        })
+    end,
 }
 
 return {
